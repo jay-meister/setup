@@ -95,6 +95,21 @@ alias gc='git checkout'
 alias gcb='git checkout -b'
 alias gpul='git pull origin'
 
-alias zshconfig="atom ~/.zshrc"
-aias currentIp="ifconfig | grep inet | grep broadcast | awk '{print $2}'"
+
+# reset atom
+alias resetAtom='rm /usr/local/bin/atom && ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom'
+
+# mix tasks
+alias mixps='source .env && mix phoenix.server'
+alias mixt='source .env && MIX_ENV=test mix coveralls.html'
+
+# zsh
+alias zshrc="atom ~/.zshrc"
+alias ss='source ~/.zshrc'
+
+# postgres bug
+alias killpostgres='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
+
+alias depCommit='git log -n 1'
+alias currentIp="ifconfig | grep inet | grep broadcast"
 # alias ohmyzsh="mate ~/.oh-my-zsh"

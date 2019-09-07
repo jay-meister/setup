@@ -40,8 +40,8 @@ defaults write -g KeyRepeat -int 2
 ```
 
 
-
-Homebrew:
+#### Terminal
+**Homebrew:**
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -51,12 +51,12 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew doctor
 ```
 
-Iterm:
+**Iterm:**
 ```
 brew cask install iterm2
 ```
 
-Zsh/OhMyZsh
+**Zsh/OhMyZsh**
 ```
 brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -84,8 +84,12 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 source .zshrc
 ```
+**TODO:**
+ZSH theme etc
 
-Github:
+
+
+**Github:**
 Generate access token:
 Settings > Developer Settings > Personal Access Tokens > Generate new > Select all repo
 Attempt to clone a private GitHub repo.
@@ -97,51 +101,44 @@ git config --global user.name "jmurphyweb"
 git config --global user.email "jmurphy.web@gmail.com"
 ```
 
-Heroku:
+**Heroku:**
 ```
 brew tap heroku/brew && brew install heroku
 heroku autocomplete
 ```
 
 
-Atom:
+#### Text Editor
+**Atom:**
 ```
 brew cask install atom
 ```
-
-_______________________
-
-TODO:
-
+**TODO:**
 Atom:
 packages:
 autocomplete-paths, open-in-browser, file-icons, linter, eslint
 themes:
 atom-material-ui, atom-material-syntax
 
-TODO:
 
-ZSH theme etc
-
-
-Postgres
+#### Databases
+**Postgres**
 ```
 brew install postrgresql
 brew services start postgresql
 ```
-
 `psql` - if that doesn't work, log in using the default database:
 `psql -d template1`
 `template1=# CREATE DATABASE jmurphy WITH OWNER jmurphy ENCODING 'UTF8';`
 quit `\q` and login again `psql`
 
-Redis
+**Redis**
 ```
 brew install redis
 ```
 ______________________
 
-OTHER TOOLS:
+#### OTHER TOOLS:
 ```
 brew cask install sourcetree
 brew cask install flux

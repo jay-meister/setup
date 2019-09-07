@@ -5,7 +5,7 @@
 #### General
 - Software update
 - Download chrome, install and log in
-- Log into icloud
+- Download Be Focused Pro and log into Apple id
 - Screenshots:
 ```
 mkdir -p ~/screenshots/
@@ -26,7 +26,8 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 - modifier keys for default keyboard (Caps -> Escape)
 - modifier keys for sculpt (Caps -> Escape, Control -> Control, Option -> Command, Command -> Option)
 - hide from menu bar
-- todo: make `\`` right of shift key on sculpt
+
+TODO: make `backtick` right of shift key on sculpt
 
 
 #### Finder
@@ -110,29 +111,44 @@ brew cask install atom
 
 _______________________
 
+TODO:
+
+Atom:
 packages:
 autocomplete-paths, open-in-browser, file-icons, linter, eslint
 themes:
 atom-material-ui, atom-material-syntax
 
+TODO:
 
-postgres
+ZSH theme etc
 
-`brew install postrgres
-brew services start postgresql`
+
+Postgres
+```
+brew install postrgresql
+brew services start postgresql
+```
+
 `psql` - if that doesn't work, log in using the default database:
 `psql -d template1`
 `template1=# CREATE DATABASE jmurphy WITH OWNER jmurphy ENCODING 'UTF8';`
 quit `\q` and login again `psql`
 
-
-redis
+Redis
+```
 brew install redis
+```
+______________________
 
-General
-- Chrome
-- iTerm2 _make default shell by clicking `iTerm2`_
-- Flux
-- Spectacle _cmd+shft+j,k,i_
-- SourceTree
-- Pomodoro Time
+OTHER TOOLS:
+```
+brew cask install sourcetree
+brew cask install flux
+brew cask install spectacle
+```
+
+Spectacle:
+- _cmd+shft+j,k,i_
+- Launch at login
+- Run as a background application

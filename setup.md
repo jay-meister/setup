@@ -1,8 +1,55 @@
+## System
 
-Heroku
-Download heroku command line tools
+#### General
+- Software update
+- Download chrome, install and log in
+- Log into icloud
+- Screenshots:
+```
+mkdir -p ~/screenshots/
+defaults write com.apple.screencapture location ~/screenshots/ && killall SystemUIServer
+```
+
+**Dock**
+- position center
+- minimum size
+- turn hiding on
+- show on genie effect
+- remove unwanted apps
+
+**Keyboard**
+- input sources British
+- show keyboard in menu bar
+- show keyboard viewer
+- modifier keys for default keyboard (Caps -> Escape)
+- modifier keys for sculpt (Caps -> Escape, Control -> Control, Option -> Command, Command -> Option)
+- hide from menu bar
+- todo: make `\backtick` right of shift key on sculpt
 
 
+#### Finder
+- Default new directory to jmurphy
+- Remove unwanted directories
+- Set key-repeat settings:
+```
+defaults write -g InitialKeyRepeat -int 20
+defaults write -g KeyRepeat -int 2
+```
+
+
+
+Homebrew:
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
+brew doctor
+```
+
+
+Heroku:
+```
+brew tap heroku/brew && brew install heroku
+```
 
 ohmyzsh
 useful plugins:

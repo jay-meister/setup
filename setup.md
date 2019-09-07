@@ -24,7 +24,7 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 - modifier keys for default keyboard (Caps -> Escape)
 - modifier keys for sculpt (Caps -> Escape, Control -> Control, Option -> Command, Command -> Option)
 - hide from menu bar
-- todo: make `\backtick` right of shift key on sculpt
+- todo: make `\`` right of shift key on sculpt
 
 
 #### Finder

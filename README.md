@@ -51,6 +51,16 @@ echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew doctor
 ```
 
+BREW install process:
+```
+brew update                           # Fetch latest version of homebrew and formula.
+brew tap caskroom/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
+brew search iterm2                     # Searches all known Casks for a partial or exact match.
+brew cask info iterm2                  # Displays information about the given Cask
+brew cask install iterm2               # Install the given cask.
+brew cleanup                          # Remove any older versions from the cellar.
+```
+
 **Iterm:**
 ```
 brew cask install iterm2
@@ -99,6 +109,8 @@ Set git defaults:
 ```
 git config --global user.name "jmurphyweb"
 git config --global user.email "jmurphy.web@gmail.com"
+git config --global pager.branch false
+git config --global core.commentChar $
 ```
 
 **Heroku:**
@@ -120,6 +132,13 @@ autocomplete-paths, open-in-browser, file-icons, linter, eslint
 themes:
 atom-material-ui, atom-material-syntax
 
+**Atom:**
+```
+brew cask install visual-studio-code
+```
+**TODO:**
+vsc plugins/settings
+
 
 #### Databases
 **Postgres**
@@ -140,12 +159,15 @@ ______________________
 
 #### OTHER TOOLS:
 ```
+nvm install node
+brew install elixir
+brew cask install slack
 brew cask install sourcetree
 brew cask install flux
 brew cask install spectacle
 ```
 
-Spectacle:
+**Spectacle:**
 - _cmd+shft+j,k,i_
 - Launch at login
 - Run as a background application

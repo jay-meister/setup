@@ -132,12 +132,33 @@ autocomplete-paths, open-in-browser, file-icons, linter, eslint
 themes:
 atom-material-ui, atom-material-syntax
 
-**Atom:**
+**VS Code:**
 ```
 brew cask install visual-studio-code
 ```
-**TODO:**
-vsc plugins/settings
+
+```
+code --install-extension vscodevim.vim
+code --install-extension mjmcloug.vscode-elixir
+```
+
+```
+{
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+    "editor.fontWeight": "400",
+    "editor.fontSize": 12,
+    "editor.fontLigatures": true,
+    "workbench.activityBar.visible": true,
+    "workbench.sideBar.location": "left",
+    "html.format.indentInnerHtml": true,
+    "elixirLS.dialyzerEnabled": false,
+    "window.zoomLevel": 0,
+}
+```
+
 
 
 #### Databases

@@ -140,6 +140,9 @@ brew cask install visual-studio-code
 ```
 code --install-extension vscodevim.vim
 code --install-extension mjmcloug.vscode-elixir
+
+brew tap caskroom/fonts
+brew cask install font-fira-code
 ```
 
 ```

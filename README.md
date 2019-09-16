@@ -140,22 +140,30 @@ brew cask install visual-studio-code
 ```
 code --install-extension vscodevim.vim
 code --install-extension mjmcloug.vscode-elixir
+code --install-extension jakebecker.elixir-ls
 ```
 
 ```
 {
+    "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
-    "editor.formatOnSave": true,
     "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontWeight": "400",
     "editor.fontSize": 12,
     "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+
     "workbench.activityBar.visible": true,
     "workbench.sideBar.location": "left",
     "html.format.indentInnerHtml": true,
+
+    "elixirLS.mixEnv": "dev",
+    "elixirLS.fetchDeps": false,
     "elixirLS.dialyzerEnabled": false,
-    "window.zoomLevel": 0,
+    "elixirLS.suggestSpecs": false,
 }
 ```
 

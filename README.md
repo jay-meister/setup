@@ -164,10 +164,14 @@ brew cask install font-fira-code
     "workbench.sideBar.location": "left",
     "html.format.indentInnerHtml": true,
 
+    // elixir
     "elixirLS.mixEnv": "dev",
     "elixirLS.fetchDeps": false,
     "elixirLS.dialyzerEnabled": false,
     "elixirLS.suggestSpecs": false,
+
+    // vim
+    "vim.useSystemClipboard":true,
 }
 ```
 

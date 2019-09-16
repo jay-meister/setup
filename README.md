@@ -141,8 +141,12 @@ brew cask install visual-studio-code
 code --install-extension vscodevim.vim
 code --install-extension mjmcloug.vscode-elixir
 code --install-extension jakebecker.elixir-ls
+
+brew tap caskroom/fonts
+brew cask install font-fira-code
 ```
 
+`settings.json`:
 ```
 {
     "window.zoomLevel": 0,

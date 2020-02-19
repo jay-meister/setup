@@ -65,26 +65,18 @@ brew cleanup                          # Remove any older versions from the cella
 ```
 brew cask install iterm2
 ```
+Set new tab & pane to same working directory:
+- open iterm2 > cmd+, > profiles 
+- find working directory > Advanced Configuration, click 'edit' 
+- NEW WINDOW - 'home dir'; OTHERS - 'reuse previous dir';
+Infinite scroll:
+- open iterm2 > cmd+, > profiles > Terminal
+- check unlimited scrollback
 
 **Zsh/OhMyZsh**
 ```
 brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-Got the following error:
-```
-ncurses is keg-only, which means it was not symlinked into /usr/local,
-because macOS already provides this software and installing another version in
-parallel can cause all kinds of trouble.
-
-If you need to have ncurses first in your PATH run:
-  echo 'export PATH="/usr/local/opt/ncurses/bin:$PATH"' >> ~/.bash_profile
-
-For compilers to find ncurses you may need to set:
-  export LDFLAGS="-L/usr/local/opt/ncurses/lib"
-  export CPPFLAGS="-I/usr/local/opt/ncurses/include"
-
 ```
 
 Update `./zshrc` from setup file. Then:
@@ -121,17 +113,6 @@ heroku autocomplete
 
 
 #### Text Editor
-**Atom:**
-```
-brew cask install atom
-```
-**TODO:**
-Atom:
-packages:
-autocomplete-paths, open-in-browser, file-icons, linter, eslint
-themes:
-atom-material-ui, atom-material-syntax
-
 **VS Code:**
 ```
 brew cask install visual-studio-code
@@ -142,7 +123,7 @@ code --install-extension vscodevim.vim
 code --install-extension mjmcloug.vscode-elixir
 code --install-extension jakebecker.elixir-ls
 
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 ```
 
@@ -200,6 +181,9 @@ nvm install node
 brew install elixir
 brew cask install slack
 brew cask install sourcetree
+# set up personal access key on GH
+brew cask install postico
+# activate license
 brew cask install flux
 brew cask install spectacle
 ```

@@ -134,4 +134,4 @@ zle-keymap-select () {
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # source ev2 env
-source /Users/jmurphy/ev2/.env
+source $HOME/ev2/.env

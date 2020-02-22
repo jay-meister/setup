@@ -42,6 +42,7 @@ defaults write -g KeyRepeat -int 2
 
 #### Terminal
 **Homebrew:**
+Download:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -55,9 +56,9 @@ BREW install process:
 ```
 brew update                           # Fetch latest version of homebrew and formula.
 brew tap caskroom/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
-brew search iterm2                     # Searches all known Casks for a partial or exact match.
-brew cask info iterm2                  # Displays information about the given Cask
-brew cask install iterm2               # Install the given cask.
+brew search iterm2                    # Searches all known Casks for a partial or exact match.
+brew cask info iterm2                 # Displays information about the given Cask
+brew cask install iterm2              # Install the given cask.
 brew cleanup                          # Remove any older versions from the cellar.
 ```
 
@@ -66,12 +67,16 @@ brew cleanup                          # Remove any older versions from the cella
 brew cask install iterm2
 ```
 Set new tab & pane to same working directory:
-- open iterm2 > cmd+, > profiles 
+- cmd+, > Profiles > General
 - find working directory > Advanced Configuration, click 'edit' 
 - NEW WINDOW - 'home dir'; OTHERS - 'reuse previous dir';
 Infinite scroll:
-- open iterm2 > cmd+, > profiles > Terminal
+- cmd+, > Profiles > Terminal
 - check unlimited scrollback
+Command click:
+- cmd+, > Profiles > Advanced
+- Semantic History > Open with editor > VS CODE
+
 
 **Zsh/OhMyZsh**
 ```
@@ -79,7 +84,7 @@ brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-Update `./zshrc` from setup file. Then:
+Update `~/.zshrc` from setup file. Then:
 ```
 brew install zsh-syntax-highlighting
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
@@ -179,6 +184,7 @@ ______________________
 ```
 nvm install node
 brew install elixir
+brew install trash
 brew cask install slack
 brew cask install sourcetree
 # set up personal access key on GH

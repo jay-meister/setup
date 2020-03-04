@@ -192,6 +192,9 @@ brew cask install postico
 # activate license
 brew cask install flux
 brew cask install spectacle
+brew cask install licecap
+brew cask install nordvpn
+brew cask install spotify
 ```
 
 **Spectacle:**

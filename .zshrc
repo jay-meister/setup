@@ -48,8 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias sql='atom ~/web/sql-queries.md'
-alias setup='atom ~/web/setup.md'
+alias setup='cd ~/code/setup && code .'
 
 # Git aliases
 alias ga='git add'
@@ -65,8 +64,6 @@ alias gpul='git pull origin'
 # remap rm to use trash
 alias rm='trash'
 
-# reset atom
-alias resetAtom='rm /usr/local/bin/atom && ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom'
 
 # postgres bug
 alias resetPostgres='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
@@ -76,9 +73,10 @@ alias mixps='source .env && mix phx.server'
 alias mixt='source .env && MIX_ENV=test mix coveralls.html'
 
 # zsh
-alias zshrc="atom ~/.zshrc"
+alias zshrc="code ~/.zshrc"
 alias ss='source ~/.zshrc'
 
+# git heroku deployed commit
 alias depCommit='git log -n 1'
 
 # check ip address for running localhost on mobile
@@ -103,5 +101,7 @@ zle-keymap-select () {
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # source ev2 env
-# TODO: only do if we are in ev2 dir
-source $HOME/ev2/.env
+if [ "${PWD##*/}" = "ev2" ]; then
+    echo "sourcing $HOME/ev2/.env"
+    source $HOME/ev2/.env
+fi

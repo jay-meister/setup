@@ -127,6 +127,7 @@ brew cask install visual-studio-code
 code --install-extension vscodevim.vim
 code --install-extension mjmcloug.vscode-elixir
 code --install-extension jakebecker.elixir-ls
+code --install-extension ericadamski.copy-relative-path
 
 brew tap homebrew/cask-fonts
 brew cask install font-fira-code

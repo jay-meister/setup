@@ -186,11 +186,15 @@ ______________________
 nvm install node
 brew install elixir
 brew install trash
+# Maybe alias rm to trash ?
+brew install apgdiff
 brew cask install slack
 brew cask install sourcetree
 # set up personal access key on GH
 brew cask install postico
-# activate license
+# activate license from google drive
+brew cask install karabiner-elements
+# if backtick not to right of left shift, maybe requires other keys to be remapped
 brew cask install flux
 brew cask install spectacle
 brew cask install licecap

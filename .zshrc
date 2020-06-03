@@ -54,12 +54,29 @@ alias setup='cd ~/code/setup && code .'
 alias ga='git add'
 alias gpo='git push origin'
 alias gs='git status'
-alias gd='git diff'
-alias gcm='git commit -m'
-alias gb='git branch'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-alias gpul='git pull origin'
+# alias gd='git diff'
+# alias gcm='git commit -m'
+# alias gb='git branch'
+# alias gc='git checkout'
+
+
+# Zsh git 
+
+# gst=git status
+# gf=git fetch
+# gfa=git fetch --all --prune
+# gfo=git fetch origin
+# gds=git diff --staged
+# ggl=git pull origin
+# ggp=git push origin $(current_branch)
+# gcm=git checkout master
+# gcd=git checkout develop
+# gcmsg=git commit -m
+# gco=git checkout
+# glo=git log --oneline --decorate --color
+# glog=git log --oneline --decorate --color --graph
+
+# gcsm=git commit -s -m (with signoff)
 
 # remap rm to use trash
 alias rm='trash'
@@ -69,7 +86,7 @@ alias rm='trash'
 alias resetPostgres='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
 
 # mix tasks
-alias mixps='source .env && mix phx.server'
+alias mixps='source .env && iex -S mix phx.server'
 alias mixt='source .env && MIX_ENV=test mix coveralls.html'
 
 # zsh

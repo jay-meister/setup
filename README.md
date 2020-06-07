@@ -94,11 +94,25 @@ source .zshrc
 **TODO:**
 ZSH theme etc
 
-
+**Generate SSH key:**
+```
+ls ~/.ssh # if empty, we generate ssh key
+ssh-keygen -C YOUR~EMAIL@gmail.com -t rsa
+# use default values, no passphrase
+ls ~/.ssh # should contain public and private key
+ssh-add ~/.ssh/id_rsa # Add your generated public key to the authentication agent
+```
 
 **Github:**
-Generate access token:
-Settings > Developer Settings > Personal Access Tokens > Generate new > Select all repo
+use ssh key: https://github.com/settings/keys
+```
+# copy public key to clipboard, then paste into github settings
+pbcopy < ~/.ssh/id_rsa.pub 
+```
+
+## TODO - test this flow and see if/why we want/need personal access token as well
+
+Generate access token: https://github.com/settings/tokens Generate new > Select all repo
 Attempt to clone a private GitHub repo.
 Enter user_name & access token for password.
 
@@ -109,6 +123,8 @@ git config --global user.email "jmurphy.web@gmail.com"
 git config --global pager.branch false
 git config --global core.commentChar $
 ```
+
+
 
 **Heroku:**
 ```
@@ -162,8 +178,6 @@ brew cask install font-fira-code
 }
 ```
 
-
-
 #### Databases
 **Postgres**
 ```
@@ -178,6 +192,7 @@ quit `\q` and login again `psql`
 **Redis**
 ```
 brew install redis
+brew cask install redisinsight
 ```
 ______________________
 

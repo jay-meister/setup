@@ -91,6 +91,8 @@ alias mixt='source .env && MIX_ENV=test mix coveralls.html'
 
 # zsh
 alias zshrc="code ~/.zshrc"
+alias zshhis="code ~/.zsh_history"
+alias til="code ~/code/til/"
 alias ss='source ~/.zshrc'
 
 # git heroku deployed commit

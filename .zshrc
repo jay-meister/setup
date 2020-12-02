@@ -47,23 +47,28 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
+# use asdf:
+. $(brew --prefix asdf)/asdf.sh
+
 # Example aliases
 alias setup='cd ~/code/setup && code .'
 
 # Git aliases
 alias ga='git add'
-alias gpo='git push origin'
-alias gs='git status'
-# alias gd='git diff'
-# alias gcm='git commit -m'
-# alias gb='git branch'
-# alias gc='git checkout'
+alias gpob='git push origin "$(git_current_branch)"'
+alias gpobf='git push origin "$(git_current_branch)" --force-with-lease'
+alias gd='git diff'
+alias gcm='git commit -m'
+alias gb='git branch'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gpul='git pull origin'
 
 
 # Zsh git 
 
 # gst=git status
-# gf=git fetch
 # gfa=git fetch --all --prune
 # gfo=git fetch origin
 # gds=git diff --staged
@@ -81,6 +86,16 @@ alias gs='git status'
 # remap rm to use trash
 alias rm='trash'
 
+
+# psql $(heroku config:get DATABASE_URL -a ev2-staging-pr-3080)
+heroku-db() {
+    if [ "$1" = "staging" ]
+    then
+        psql $(heroku config:get DATABASE_URL -a ev2-staging)
+    else
+        psql $(heroku config:get DATABASE_URL -a ev2-staging-pr-"$1")
+    fi
+}
 
 # postgres bug
 alias resetPostgres='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
@@ -100,9 +115,6 @@ alias depCommit='git log -n 1'
 
 # check ip address for running localhost on mobile
 alias currentIp="ifconfig | grep inet | grep broadcast"
-
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-# export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 
 zle-keymap-select () {
     if [ "$TERM" = "xterm-256color" ]; then

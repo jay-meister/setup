@@ -196,10 +196,31 @@ brew cask install redisinsight
 ```
 ______________________
 
+#### asdf:
+install asdf (I used homebrew then linked in .zshrc)
+
+```
+# use asdf:
+. $(brew --prefix asdf)/asdf.sh
+```
+install elixir & erlang
+```
+asdf help
+
+asdf plugin-add elixir
+asdf list-all elixir
+asdf install elixir 1.10.3
+asdf global elixir 1.10.3
+asdf list elixir
+asdf list-all erlang
+asdf global erlang 21.0.5
+asdf list erlang
+```
+
 #### OTHER TOOLS:
+
 ```
 nvm install node
-brew install elixir
 brew install trash
 # Maybe alias rm to trash ?
 brew install apgdiff
@@ -221,3 +242,9 @@ brew cask install spotify
 - _cmd+shft+j,k,i_
 - Launch at login
 - Run as a background application
+
+**Karabiner Elements:**
+- Simple modifications:
+- `left_command` -> `left_option`
+- `left_option` -> `left_command`
+- `non_us_backslash` -> `grave_accent_and_tilde` (`)

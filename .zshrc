@@ -99,8 +99,6 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 
-# use asdf:
-. $(brew --prefix asdf)/asdf.sh
 
 alias setup='cd ~/code/setup && code .'
 
@@ -168,3 +166,6 @@ if [ "${PWD##*/}" = "ev2" ]; then
     echo "sourcing $HOME/ev2/.env"
     source $HOME/ev2/.env
 fi
+
+# use asdf:
+. $(brew --prefix asdf)/asdf.sh

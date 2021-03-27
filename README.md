@@ -10,6 +10,7 @@
 ```
 mkdir -p ~/screenshots/
 defaults write com.apple.screencapture location ~/screenshots/ && killall SystemUIServer
+# add to favourites in Finder
 ```
 
 **Dock**
@@ -27,14 +28,14 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 - modifier keys for sculpt (Caps -> Escape, Control -> Control, Option -> Command, Command -> Option)
 - hide from menu bar
 
-TODO: make `backtick` right of shift key on sculpt
-
 
 #### Finder
 - Default new directory to jmurphy
-- Remove unwanted directories
+- Add screenshots and jmurphy as favourites
+- Remove unwanted directories from favourites
 - Set key-repeat settings:
 ```
+# doesn't seem to work on M1
 defaults write -g InitialKeyRepeat -int 20
 defaults write -g KeyRepeat -int 2
 ```
@@ -46,7 +47,7 @@ Download:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-TODO: what does this do?
+
 ```
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
 brew doctor
@@ -57,14 +58,14 @@ BREW install process:
 brew update                           # Fetch latest version of homebrew and formula.
 brew tap caskroom/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
 brew search iterm2                    # Searches all known Casks for a partial or exact match.
-brew cask info iterm2                 # Displays information about the given Cask
-brew cask install iterm2              # Install the given cask.
+brew info iterm2                 # Displays information about the given Cask
+brew install iterm2              # Install the given cask.
 brew cleanup                          # Remove any older versions from the cellar.
 ```
 
 **Iterm:**
 ```
-brew cask install iterm2
+brew install iterm2
 ```
 Set new tab & pane to same working directory:
 - cmd+, > Profiles > General
@@ -76,6 +77,7 @@ Infinite scroll:
 Command click:
 - cmd+, > Profiles > Advanced
 - Semantic History > Open with editor > VS CODE
+- if Silicone: Duplicate application and open with Rosetta
 
 
 **Zsh/OhMyZsh**
@@ -87,12 +89,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 Update `~/.zshrc` from setup file. Then:
 ```
 brew install zsh-syntax-highlighting
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+# currently not working with M1: git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+# node install handled later
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 source .zshrc
 ```
-**TODO:**
-ZSH theme etc
 
 **Generate SSH key:**
 ```
@@ -110,8 +111,6 @@ use ssh key: https://github.com/settings/keys
 pbcopy < ~/.ssh/id_rsa.pub 
 ```
 
-## TODO - test this flow and see if/why we want/need personal access token as well
-
 Generate access token: https://github.com/settings/tokens Generate new > Select all repo
 Attempt to clone a private GitHub repo.
 Enter user_name & access token for password.
@@ -128,6 +127,7 @@ git config --global core.commentChar $
 
 **Heroku:**
 ```
+# note: Currently requires install from rosetta-enabled terminal
 brew tap heroku/brew && brew install heroku
 heroku autocomplete
 ```
@@ -136,7 +136,12 @@ heroku autocomplete
 #### Text Editor
 **VS Code:**
 ```
-brew cask install visual-studio-code
+brew install visual-studio-code
+```
+
+```
+# enable press and hold
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 ```
 
 ```
@@ -146,7 +151,7 @@ code --install-extension jakebecker.elixir-ls
 code --install-extension ericadamski.copy-relative-path
 
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install font-fira-code
 ```
 
 `settings.json`:
@@ -192,7 +197,7 @@ quit `\q` and login again `psql`
 **Redis**
 ```
 brew install redis
-brew cask install redisinsight
+brew install redisinsight
 ```
 ______________________
 
@@ -200,45 +205,62 @@ ______________________
 install asdf (I used homebrew then linked in .zshrc)
 
 ```
-# use asdf:
+# use asdf in .zshrc
 . $(brew --prefix asdf)/asdf.sh
 ```
 install elixir & erlang
 ```
 asdf help
 
+asdf plugin-add erlang
+asdf list-all erlang
+asdf global erlang 21.0.5
+asdf list erlang
+
 asdf plugin-add elixir
 asdf list-all elixir
 asdf install elixir 1.10.3
 asdf global elixir 1.10.3
 asdf list elixir
-asdf list-all erlang
-asdf global erlang 21.0.5
-asdf list erlang
 ```
+
+#### NVM & Nodejs
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install 15.5.0
+```
+
 
 #### OTHER TOOLS:
 
-```
-nvm install node
+
+
+```sh
 brew install trash
-# Maybe alias rm to trash ?
 brew install apgdiff
-brew cask install slack
-brew cask install sourcetree
+brew install slack
+brew install sourcetree
 # set up personal access key on GH
-brew cask install postico
+brew install postico
 # activate license from google drive
-brew cask install karabiner-elements
+brew install karabiner-elements
 # if backtick not to right of left shift, maybe requires other keys to be remapped
-brew cask install flux
-brew cask install spectacle
-brew cask install licecap
-brew cask install nordvpn
-brew cask install spotify
+brew install rectangle
+# testing
+brew install licecap
+brew install nordvpn
+brew install spotify
 ```
 
-**Spectacle:**
+**rectangle**
+- `cmd shift i` full screen 
+- `cmd shift h` left half 
+- `cmd shift l` right half 
+- `cmd shift j` bottom half 
+- `cmd shift k` top half 
+
+**screen brightness**
+
 - _cmd+shft+j,k,i_
 - Launch at login
 - Run as a background application
@@ -248,3 +270,5 @@ brew cask install spotify
 - `left_command` -> `left_option`
 - `left_option` -> `left_command`
 - `non_us_backslash` -> `grave_accent_and_tilde` (`)
+
+

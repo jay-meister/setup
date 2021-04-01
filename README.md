@@ -250,6 +250,7 @@ brew install rectangle
 brew install licecap
 brew install nordvpn
 brew install spotify
+brew install clipy
 ```
 
 **rectangle**

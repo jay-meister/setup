@@ -251,6 +251,7 @@ brew install licecap
 brew install nordvpn
 brew install spotify
 brew install clipy
+brew install gifcapture
 ```
 
 **rectangle**

@@ -22,11 +22,15 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 
 **Keyboard**
 - input sources British
-- show keyboard in menu bar
-- show keyboard viewer
-- modifier keys for default keyboard (Caps -> Escape)
-- modifier keys for sculpt (Caps -> Escape, Control -> Control, Option -> Command, Command -> Option)
 - hide from menu bar
+- preferences > keyboard > modifier keys (Caps -> Escape)
+
+**Karabiner Elements preferences:**
+- Simple modifications:
+- `left_command` -> `left_option`
+- `left_option` -> `left_command`
+- `right_option` -> `right_command`
+- `non_us_backslash` -> `grave_accent_and_tilde` (`)
 
 
 #### Finder
@@ -243,15 +247,17 @@ brew install sourcetree
 # set up personal access key on GH
 brew install postico
 # activate license from google drive
-brew install karabiner-elements
-# if backtick not to right of left shift, maybe requires other keys to be remapped
+brew cask install karabiner-elements
+# necessary for laptop environment
 brew install rectangle
-# testing
-brew install licecap
 brew install nordvpn
 brew install spotify
+
+# testing
 brew install clipy
 brew install gifcapture
+brew install toggl-track
+
 ```
 
 **rectangle**
@@ -267,10 +273,5 @@ brew install gifcapture
 - Launch at login
 - Run as a background application
 
-**Karabiner Elements:**
-- Simple modifications:
-- `left_command` -> `left_option`
-- `left_option` -> `left_command`
-- `non_us_backslash` -> `grave_accent_and_tilde` (`)
 
 

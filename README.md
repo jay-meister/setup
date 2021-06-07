@@ -34,10 +34,10 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 - Add screenshots and jmurphy as favourites
 - Remove unwanted directories from favourites
 - Set key-repeat settings:
-```
-# doesn't seem to work on M1
-defaults write -g InitialKeyRepeat -int 20
-defaults write -g KeyRepeat -int 2
+```sh
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+# check defaults with: `defaults read | grep -i 'keyrepeat'`
 ```
 
 

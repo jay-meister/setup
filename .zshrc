@@ -99,6 +99,14 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 
+if [ "$(arch)" = "arm64" ]; then
+  echo "M1"
+  eval $(/opt/homebrew/bin/brew shellenv);
+else
+  echo "Intel"
+  eval $(/usr/local/bin/brew shellenv);
+fi
+
 
 alias setup='cd ~/code/setup && code .'
 
@@ -167,5 +175,5 @@ if [ "${PWD##*/}" = "ev2" ]; then
     source $HOME/ev2/.env
 fi
 
-# use asdf:
-. $(brew --prefix asdf)/asdf.sh
+# if using asdf and installed with brew:
+# . $(brew --prefix asdf)/asdf.sh

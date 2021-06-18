@@ -67,7 +67,7 @@ brew install iterm2              # Install the given cask.
 brew cleanup                          # Remove any older versions from the cellar.
 ```
 
-**Iterm:**
+**iTerm:**
 ```
 brew install iterm2
 ```
@@ -81,8 +81,21 @@ Infinite scroll:
 Command click:
 - cmd+, > Profiles > Advanced
 - Semantic History > Open with editor > VS CODE
-- if Silicone: Duplicate application and open with Rosetta
 
+
+**iTerm Rosetta:**
+- Duplicate application and open with Rosetta, rename to `iTerm Rosetta`
+- install brew using `iTerm Rosetta`
+- use different version by default by adding the following to zshrc
+```
+if [ "$(arch)" = "arm64" ]; then
+  echo "M1"
+  eval $(/opt/homebrew/bin/brew shellenv);
+else
+  echo "Intel"
+  eval $(/usr/local/bin/brew shellenv);
+fi
+```
 
 **Zsh/OhMyZsh**
 ```
@@ -99,7 +112,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 source .zshrc
 ```
 
+
+
+### Github:
+
+> So far I use Access Tokens so can ignore SSH
+
 **Generate SSH key:**
+
 ```
 ls ~/.ssh # if empty, we generate ssh key
 ssh-keygen -C YOUR~EMAIL@gmail.com -t rsa
@@ -108,16 +128,16 @@ ls ~/.ssh # should contain public and private key
 ssh-add ~/.ssh/id_rsa # Add your generated public key to the authentication agent
 ```
 
-**Github:**
 use ssh key: https://github.com/settings/keys
 ```
 # copy public key to clipboard, then paste into github settings
 pbcopy < ~/.ssh/id_rsa.pub 
 ```
 
-Generate access token: https://github.com/settings/tokens Generate new > Select all repo
-Attempt to clone a private GitHub repo.
-Enter user_name & access token for password.
+**Access Token**
+- Generate access token: https://github.com/settings/tokens Generate new > Select all repo
+- Attempt to clone a private GitHub repo.
+- Enter user_name & access token for password.
 
 Set git defaults:
 ```

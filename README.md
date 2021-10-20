@@ -274,6 +274,7 @@ brew install nordvpn
 brew install spotify
 
 # testing
+brew install --cask aldente
 brew install clipy
 brew install gifcapture
 brew install toggl-track
@@ -288,7 +289,6 @@ brew install toggl-track
 - `cmd shift k` top half 
 
 **screen brightness**
-
 - _cmd+shft+j,k,i_
 - Launch at login
 - Run as a background application

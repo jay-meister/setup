@@ -275,6 +275,9 @@ brew install spotify
 
 # testing
 brew install --cask aldente
+brew install password manager xxx
+brew install zoom
+brew install ngrok
 brew install clipy
 brew install gifcapture
 brew install toggl-track

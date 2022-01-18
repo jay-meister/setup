@@ -60,7 +60,7 @@ brew doctor
 BREW install process:
 ```
 brew update                           # Fetch latest version of homebrew and formula.
-brew tap caskroom/cask                # Tap the Caskroom/Cask repository from Github using HTTPS.
+brew tap homebrew/cask                # Tap the Homebrew/Cask repository from Github using HTTPS.
 brew search iterm2                    # Searches all known Casks for a partial or exact match.
 brew info iterm2                 # Displays information about the given Cask
 brew install iterm2              # Install the given cask.

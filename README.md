@@ -23,14 +23,20 @@ defaults write com.apple.screencapture location ~/screenshots/ && killall System
 **Keyboard**
 - input sources British
 - hide from menu bar
-- preferences > keyboard > modifier keys (Caps -> Escape)
 
 **Karabiner Elements preferences:**
-- Simple modifications:
+- Simple modifications - **all devices**:
+- `escape` -> `caps lock`
+- `caps lock` -> `escape`
+
+- Simple modifications - **microsoft sculpt**:
 - `left_command` -> `left_option`
 - `left_option` -> `left_command`
+
+- Simple modifications - **device dependent**:
 - `right_option` -> `right_command`
 - `non_us_backslash` -> `grave_accent_and_tilde` (`)
+
 
 
 #### Finder

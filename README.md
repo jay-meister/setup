@@ -87,6 +87,8 @@ Infinite scroll:
 Command click:
 - cmd+, > Profiles > Advanced
 - Semantic History > Open with editor > VS CODE
+- Add plugins
+- For distinct cursor styles insert/visual mode: in `~.oh-my-zsh/plugins/vi-mode/vi-mode.plugin.zsh` set: `typeset -g VI_MODE_SET_CURSOR=true`
 
 
 **iTerm Rosetta:**
@@ -147,8 +149,9 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 Set git defaults:
 ```
-git config --global user.name "jmurphyweb"
-git config --global user.email "jmurphy.web@gmail.com"
+git config --global init.defaultbranch main
+git config --global user.name jay-meister
+git config --global user.email jmurphy.web@gmail.com
 git config --global pager.branch false
 git config --global core.commentChar $
 ```
@@ -187,29 +190,29 @@ brew install font-fira-code
 `settings.json`:
 ```
 {
-    "window.zoomLevel": 0,
-    "editor.minimap.enabled": false,
-    "editor.tabSize": 2,
-    "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
-    "editor.fontWeight": "400",
-    "editor.fontSize": 12,
-    "editor.fontLigatures": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "JakeBecker.elixir-ls",
+  "window.zoomLevel": 0,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 12,
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "JakeBecker.elixir-ls",
 
-    "workbench.activityBar.visible": true,
-    "workbench.sideBar.location": "left",
-    "html.format.indentInnerHtml": true,
+  "workbench.activityBar.visible": true,
+  "workbench.sideBar.location": "left",
+  "html.format.indentInnerHtml": true,
 
-    // elixir
-    "elixirLS.mixEnv": "dev",
-    "elixirLS.fetchDeps": false,
-    "elixirLS.dialyzerEnabled": false,
-    "elixirLS.suggestSpecs": false,
+  // elixir
+  "elixirLS.mixEnv": "dev",
+  "elixirLS.fetchDeps": false,
+  "elixirLS.dialyzerEnabled": false,
+  "elixirLS.suggestSpecs": false,
 
-    // vim
-    "vim.useSystemClipboard":true,
+  // vim
+  "vim.useSystemClipboard":true,
 }
 ```
 
@@ -263,44 +266,42 @@ nvm install 15.5.0
 
 #### OTHER TOOLS:
 
-
+install `Session` (not currently on brew)
 
 ```sh
 brew install trash
-brew install apgdiff
 brew install slack
 brew install sourcetree
 # set up personal access key on GH
-brew install postico
-# activate license from google drive
 brew cask install karabiner-elements
 # necessary for laptop environment
 brew install rectangle
 brew install nordvpn
 brew install spotify
 
-# testing
 brew install --cask aldente
-brew install password manager xxx
+brew install password-manager
 brew install zoom
-brew install ngrok
 brew install clipy
-brew install gifcapture
-brew install toggl-track
 
+# other tools
+brew install postico # activate license from google drive
+brew install apgdiff
+brew install ngrok
+brew install gifcapture
 ```
 
 **rectangle**
 - `cmd shift i` full screen 
 - `cmd shift h` left half 
 - `cmd shift l` right half 
-- `cmd shift j` bottom half 
-- `cmd shift k` top half 
+- `cmd shift \`` next display 
 
 **screen brightness**
 - _cmd+shft+j,k,i_
 - Launch at login
 - Run as a background application
 
-
+**clipy preferences**
+- save screenshots in history
 
